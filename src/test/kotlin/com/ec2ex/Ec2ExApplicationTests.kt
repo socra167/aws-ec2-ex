@@ -7,7 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
@@ -23,11 +23,13 @@ class Ec2ExApplicationTests {
     fun t1() {
         val resultActions =
             mvc
-                .perform(MockMvcRequestBuilders.get("/buckets"))
-                .andDo(MockMvcResultHandlers.print())
+                .perform(
+                    get("/buckets"),
+                ).andDo(MockMvcResultHandlers.print())
 
-        resultActions.andExpect {
-            status().isOk()
-        }
+        resultActions
+            .andExpect {
+                status().isOk()
+            }
     }
 }
