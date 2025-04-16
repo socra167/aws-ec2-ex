@@ -12,7 +12,7 @@ class HomeController(
     private val secretWord: String = " "
 
     @GetMapping
-    fun main(): String = "Hi, $secretWord"
+    fun main(): String = "Hi!!, $secretWord"
 
     @GetMapping("/buckets")
     fun buckets(): List<String> = s3Service.getBucketNames()
