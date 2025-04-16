@@ -9,7 +9,7 @@ class HomeController(
     private val s3Service: S3Service,
 ) {
     @Value("\${custom.secretWord}")
-    private val secretWord: String = ""
+    private val secretWord: String = " "
 
     @GetMapping
     fun main(): String = "Hi, $secretWord"
