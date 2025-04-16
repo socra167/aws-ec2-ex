@@ -27,6 +27,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    // [AWS 연동] - S3 연동을 위한 Spring Cloud AWS Starter
     // https://mvnrepository.com/artifact/io.awspring.cloud/spring-cloud-aws-starter-s3
     implementation("io.awspring.cloud:spring-cloud-aws-starter-s3:3.3.0")
 }
