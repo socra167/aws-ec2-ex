@@ -1,2 +1,5 @@
 spring:
-  application.name: ec2-ex
+  application:
+    name: ec2-ex
+  profiles:
+    include: secret
